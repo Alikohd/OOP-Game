@@ -4,11 +4,17 @@
 
 #include "../Field.h"
 #include "FieldScheme.h"
+#include "FieldBuilder.h"
+
+struct FieldGeneratorOutput {
+    Field* field;
+    Player* player;
+};
 
 template<int Width, int Height, typename... Rules>
 class FieldGenerator {
 public:
-    Field* make() {
+    FieldGeneratorOutput make() {
         std::vector<std::vector<CellType>> cells{};
         cells.resize(Height);
         for (int i = 0; i < Width; ++i) {
@@ -18,8 +24,11 @@ public:
 
         (apply<Rules>(scheme), ...);
 
-
-    }
+        FieldBuilder builder;
+        auto out = builder.make(scheme);
+        FieldGeneratorOutput generator_out{out.first, out.second};
+        return generator_out;
+    };
 
 private:
     template<typename Rule>
