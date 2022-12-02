@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.21)
+project(game_c__)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(game_c__ main.cpp Field.cpp Cell.cpp Cell.h Event.h Player.cpp Player.h Controller.cpp Controller.h Coords.h FEvent.h PEvent.h Werewolf.cpp Werewolf.h FieldPrinter.cpp FieldPrinter.h Escape.cpp Escape.h Lever.cpp Lever.h Gear.cpp Gear.h EnchantmentTable.cpp EnchantmentTable.h Fire.cpp Fire.h MeteorRain.cpp MeteorRain.h PlayerObserver.cpp PlayerObserver.h Launcher.cpp Launcher.h PEvent.cpp FEvent.cpp PFEvent.cpp PFEvent.h Portal.cpp Portal.h Logger.cpp Logger.h FLogger.cpp FLogger.h IPlayerObserver.h IFieldObserver.h FieldObserver.cpp FieldObserver.h ConcoleLogger.cpp ConcoleLogger.h WerewolfObserver.cpp WerewolfObserver.h MeteorRainObserver.cpp MeteorRainObserver.h GearObserver.cpp GearObserver.h FireObserver.cpp FireObserver.h EventObserver.h EscapeObserver.cpp EscapeObserver.h LoggerConfigurator.cpp LoggerConfigurator.h InputMediator.cpp InputMediator.h IInputMediator.h IInputController.h Command.h InputReader.cpp InputReader.h ApplicationController.cpp ApplicationController.h ControlScheme.h ControlSchemeFileManager.cpp ControlSchemeFileManager.h KeyboardReader.cpp KeyboardReader.h)
