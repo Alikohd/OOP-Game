@@ -1,7 +1,8 @@
 #include "Escape.h"
 #include "Player.h"
 
-Escape::Escape(Player *player): PEvent(player), _lock(false), _gear_plank(1000){}
+Escape::Escape(Player* player, IEscapeObserver* observer)
+        : PEvent(player), _lock(false), _gear_plank(1000), _observer(observer) {}
 
 void Escape::react() {
     auto player = _player;
@@ -11,8 +12,8 @@ void Escape::react() {
 
 Event* Escape::clone() {
     auto event = new Escape(_player);
-    event -> _lock = _lock;
-    event ->_gear_plank = _gear_plank;
+    event->_lock = _lock;
+    event->_gear_plank = _gear_plank;
     return event;
 }
 

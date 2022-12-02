@@ -2,12 +2,12 @@
 #define GAME_C___LAUNCHER_H
 #include "ApplicationController.h"
 //#include "EnchantmentTableObserver.h"
-#include "EscapeObserver.h"
-#include "FireObserver.h"
-#include "GearObserver.h"
-#include "MeteorRainObserver.h"
+#include "EventObservers/EscapeObserver.h"
+#include "EventObservers/FireObserver.h"
+#include "EventObservers/GearObserver.h"
+#include "EventObservers/MeteorRainObserver.h"
 //#include "PortalObserver.h"
-#include "WerewolfObserver.h"
+#include "EventObservers/WerewolfObserver.h"
 
 #include "Field.h"
 #include "Player.h"

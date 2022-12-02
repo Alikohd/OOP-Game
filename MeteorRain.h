@@ -1,5 +1,6 @@
 #include "PEvent.h"
 #include "FEvent.h"
+
 #ifndef GAME_C___METEORRAIN_H
 #define GAME_C___METEORRAIN_H
 
@@ -9,14 +10,15 @@ public:
     virtual void meteorRainReact() = 0;
 };
 
-class MeteorRain: public PEvent, public FEvent  {
+class MeteorRain : public PEvent, public FEvent {
 private:
     int _gear;
     IMeteorRainObserver* _observer = nullptr;
+
 public:
-    MeteorRain(Player *player, Field *field);
+    MeteorRain(Player* player, Field* field, IMeteorRainObserver* observer = nullptr);
     void react() override;
-    Event * clone() override;
+    Event* clone() override;
     void setObserver(IMeteorRainObserver* observer);
 };
 

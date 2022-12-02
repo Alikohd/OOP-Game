@@ -1,7 +1,7 @@
 #ifndef GAME_C___WEREWOLFOBSERVER_H
 #define GAME_C___WEREWOLFOBSERVER_H
 
-#include "Werewolf.h"
+#include "../Werewolf.h"
 
 class WerewolfObserver : public IWerewolfObserver {
 public:

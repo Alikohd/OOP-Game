@@ -2,7 +2,7 @@
 #define GAME_C___GEAROBSERVER_H
 
 
-#include "Gear.h"
+#include "../Gear.h"
 
 class GearObserver : public IGearObserver {
 public:

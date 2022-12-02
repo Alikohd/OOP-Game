@@ -1,5 +1,5 @@
 #include "WerewolfObserver.h"
-#include "Logger.h"
+#include "../Logger.h"
 
 void WerewolfObserver::werewolfReact(int damage) {
     Logger::getInstance() << LoggerMessage{"Terrible werewolf with damage " +

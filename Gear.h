@@ -1,5 +1,6 @@
 #ifndef GAME_C___GEAR_H
 #define GAME_C___GEAR_H
+
 #include "PEvent.h"
 
 class IGearObserver {
@@ -8,11 +9,11 @@ public:
     virtual void gearReact() = 0;
 };
 
-class Gear: public PEvent {
+class Gear : public PEvent {
 public:
-    explicit Gear(Player *player);
+    explicit Gear(Player* player, IGearObserver* observer = nullptr);
     void react() override;
-    Event * clone() override;
+    Event* clone() override;
     void setObserver(IGearObserver* observer);
 private:
     int _score;

@@ -2,7 +2,7 @@
 #define GAME_C___ESCAPEOBSERVER_H
 
 
-#include "Escape.h"
+#include "../Escape.h"
 
 class EscapeObserver : public IEscapeObserver {
 public:

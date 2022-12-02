@@ -1,5 +1,6 @@
 #ifndef GAME_C___ESCAPE_H
 #define GAME_C___ESCAPE_H
+
 #include "Event.h"
 #include "PEvent.h"
 
@@ -9,15 +10,16 @@ public:
     virtual void EscapeReacted() = 0;
 };
 
-class Escape: public PEvent {
+class Escape : public PEvent {
 private:
     bool _lock;
     int _gear_plank;
     IEscapeObserver* _observer = nullptr;
+
 public:
-    explicit Escape(Player *player);
+    explicit Escape(Player* player, IEscapeObserver* observer = nullptr);
     void react() override;
-    Event * clone() override;
+    Event* clone() override;
     void setObserver(IEscapeObserver* observer);
 };
 

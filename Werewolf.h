@@ -1,5 +1,6 @@
 #ifndef GAME_C___WEREWOLF_H
 #define GAME_C___WEREWOLF_H
+
 #include "PEvent.h"
 #include "Player.h"
 
@@ -9,15 +10,15 @@ public:
     virtual void werewolfReact(int damage) = 0;
 };
 
-class Werewolf: public PEvent {
+class Werewolf : public PEvent {
 private:
     int _health, _damage, _reward;
     IWerewolfObserver* _observer = nullptr;
     void notifyObserver(int damage);
 
 public:
+    explicit Werewolf(Player* player, IWerewolfObserver* observer = nullptr);
     void react() override;
-    explicit Werewolf(Player *player);
     Event* clone() override;
     void setObserver(IWerewolfObserver* observer);
 };
